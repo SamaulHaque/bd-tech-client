@@ -1,11 +1,15 @@
-import React from 'react';
+import { useState } from 'react';
 import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
-    const {} = useContext(AuthContext);
+    const [error, setError] = useState('')
+    const {logIn} = useContext(AuthContext);
+
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -13,6 +17,15 @@ const Login = () => {
         const email= form.email.value;
         const password = form.password.value;
 
+        logIn(email, password)
+        .then(() => {
+            form.reset();
+            navigate('/')
+        })
+        .catch(error => {
+            console.error(error)
+            setError(error.message)
+        })
     }
 
     return (
@@ -30,6 +43,8 @@ const Login = () => {
             <Button variant="primary" type="submit">
                 Login
             </Button>
+            <span className='text-danger ms-3'>{error}</span>
+            <p>Are you new in this site? <Link to='/register'>Please Register</Link></p>
         </Form>
 
     );
