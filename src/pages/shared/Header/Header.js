@@ -22,14 +22,14 @@ const Header = () => {
         <Navbar className='mb-4' collapseOnSelect expand="lg" bg="light" variant="light">
             <Container>
                 
-                <Navbar.Brand href="#home"><Image style={{height:'30px', width:'40px'}} src={logo}></Image></Navbar.Brand>
-                <Navbar.Brand href="#home">BD Tech</Navbar.Brand>
+                <Link to='/'><Image style={{height:'30px', width:'40px'}} src={logo}></Image></Link>
+                <Link to='/'>BD Tech</Link>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#pricing">Courses</Nav.Link>
-                        <Nav.Link href="#pricing">FAQ</Nav.Link>
-                        <Nav.Link href="#pricing">Blog</Nav.Link>
+                        <Link to='/courses'>Courses</Link>
+                        <Link to='/faq'>FAQ</Link>
+                        <Link to='/blog'>Blog</Link>
                     </Nav>
                     <Nav>
                         
