@@ -6,6 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import logo from './favicon.jpg'
 
 
 const Header = () => {
@@ -20,6 +21,8 @@ const Header = () => {
     return (
         <Navbar className='mb-4' collapseOnSelect expand="lg" bg="light" variant="light">
             <Container>
+                
+                <Navbar.Brand href="#home"><Image style={{height:'30px', width:'40px'}} src={logo}></Image></Navbar.Brand>
                 <Navbar.Brand href="#home">BD Tech</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
