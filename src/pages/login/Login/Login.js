@@ -24,6 +24,7 @@ const Login = () => {
         .then(() => {
             form.reset();
             navigate(from, {replace: true})
+            setError('')
         })
         .catch(error => {
             console.error(error)

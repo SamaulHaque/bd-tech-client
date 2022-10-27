@@ -6,6 +6,7 @@ import Courses from "../../pages/Courses/Courses";
 import Home from "../../pages/Home/Home";
 import Login from "../../pages/login/Login/Login";
 import Register from "../../pages/login/Register/Register";
+import PDF from "../../pages/PDF/PDF";
 import Blog from "../../pages/shared/Blog/Blog";
 import CourseCartSummary from "../../pages/shared/CourseCartSummary/CourseCartSummary";
 import FAQ from "../../pages/shared/FAQ/FAQ";
@@ -20,13 +21,13 @@ export const routes = createBrowserRouter([
             {
                 path:'/',
                 element: <Courses></Courses>,
-                loader: () => fetch('http://localhost:5000/courses')
+                loader: () => fetch('https://bd-tech-server-samaulhaque.vercel.app/courses')
             
             },
             {
                 path: '/category/:id',
                 element: <Category></Category>,
-                loader: ({params}) => fetch(`http://localhost:5000/category/${params.id}`)
+                loader: ({params}) => fetch(`https://bd-tech-server-samaulhaque.vercel.app/category/${params.id}`)
             },
             {
                 path: '/courses/:id',
@@ -35,12 +36,12 @@ export const routes = createBrowserRouter([
             {
                 path: '/courses',
                 element: <Courses></Courses>,
-                loader: () => fetch('http://localhost:5000/courses')
+                loader: () => fetch('https://bd-tech-server-samaulhaque.vercel.app/courses')
             },
             {
                 path: '/course/:id',
                 element: <Course></Course>,
-                loader: ({params}) => fetch(`http://localhost:5000/courses/${params.id}`)
+                loader: ({params}) => fetch(`https://bd-tech-server-samaulhaque.vercel.app/courses/${params.id}`)
             },
             {
                 path: '/login',
@@ -61,6 +62,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/checkout',
                 element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>
+            },
+            {
+                path: '/pdf',
+                element:<PDF></PDF>
             }
         ]
 

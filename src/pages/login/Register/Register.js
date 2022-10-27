@@ -8,6 +8,7 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
     const [success, setSuccess] = useState(null)
+    const [error, setError] = useState(null)
 
     const {createUser, updateUserProfile} = useContext(AuthContext);
 
@@ -24,9 +25,11 @@ const Register = () => {
             form.reset()
             setSuccess('Register Successfully.')
             handleupdateUserProfile(name, photoURL)
+            setError('')
         })
         .catch(error => {
             console.error(error)
+            setError(error.message)
 
         })
     }
@@ -66,6 +69,8 @@ const Register = () => {
             Register
         </Button>
         <span className='text-success ms-3'>{success}</span>
+        <span className='text-danger ms-3'>{error}</span>
+
         <p>Already have an account? <Link to='/login'>Please Login</Link></p>
     </Form>
     );

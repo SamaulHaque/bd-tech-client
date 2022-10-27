@@ -23,8 +23,8 @@ const Header = () => {
         <Navbar className='mb-4 nav-routes' collapseOnSelect expand="lg" bg="light" variant="light">
             <Container>
                 
-                <Link to='/courses'><Image style={{height:'30px', width:'40px'}} src={logo}></Image></Link>
-                <Link  to='/courses'>BD Tech</Link>
+                <Link to='/'><Image style={{height:'30px', width:'40px'}} src={logo}></Image></Link>
+                <Link  to='/'>BD Tech</Link>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
@@ -36,25 +36,28 @@ const Header = () => {
                         
                         {
                             user?.uid ?
-                            <>
-                            <span>{user?.displayName}</span>
-                            <Button onClick={handleLogOut} className='mx-3' size="sm">Log Out</Button>
-                            </>
+                            <div className=''>
+                            <span className='me-3 '>{user?.displayName}</span>
+                            <Link className='log-out'><Button onClick={handleLogOut} className='me-3 mt-2 mb-2' size="sm" >Log Out</Button></Link>
+                            </div>
                             :
                             <>
-                            <Link className='mx-3' to='/login'><Button size="sm">Login</Button></Link>
-                            <Link className='mx-3' to='/register'><Button size="sm">Register</Button></Link>
+                            <Link className='me-3 mt-2' to='/login'><Button size="sm">Login</Button></Link>
+                            <Link className='me-3 mt-2' to='/register'><Button size="sm">Register</Button></Link>
                             </>
                         }
                         {
                             user?.photoURL ?
-                                <Image
+                                <div className='d-flex align-items-center'>
+                                    <Image 
                                     src={user?.photoURL}
                                     style={{ height: '30px' }}
                                     roundedCircle
+                                    fluid
                                 ></Image>
+                                </div>
                                 :
-                                <FaUser></FaUser>
+                                <FaUser className='my-3'></FaUser>
                         }
                         
                     </Nav>
