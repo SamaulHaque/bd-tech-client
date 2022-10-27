@@ -1,11 +1,16 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
+import CourseCartSummary from '../shared/CourseCartSummary/CourseCartSummary';
 
 const Category = () => {
-
+    const courses = useLoaderData();
     return (
         <div>
-            <h2>Category</h2>
+            {
+                courses.map(course => <CourseCartSummary
+                key={course.id}
+                course={course}
+                ></CourseCartSummary>)
+            }
         </div>
     );
 };

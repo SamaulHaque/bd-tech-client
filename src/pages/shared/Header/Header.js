@@ -7,6 +7,7 @@ import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import logo from './favicon.jpg'
+import './Header.css'
 
 
 const Header = () => {
@@ -19,11 +20,11 @@ const Header = () => {
     }
 
     return (
-        <Navbar className='mb-4' collapseOnSelect expand="lg" bg="light" variant="light">
+        <Navbar className='mb-4 nav-routes' collapseOnSelect expand="lg" bg="light" variant="light">
             <Container>
                 
-                <Link to='/'><Image style={{height:'30px', width:'40px'}} src={logo}></Image></Link>
-                <Link to='/'>BD Tech</Link>
+                <Link to='/courses'><Image style={{height:'30px', width:'40px'}} src={logo}></Image></Link>
+                <Link  to='/courses'>BD Tech</Link>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">

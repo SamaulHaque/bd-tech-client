@@ -4,9 +4,12 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 import { FaGithub, FaGoogle } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const RightNav = () => {
+
+    const navigate = useNavigate();
     const {loginWithGoogle, loginWithGitHub} = useContext(AuthContext);
 
     const googleProvider = new GoogleAuthProvider();
@@ -16,8 +19,7 @@ const RightNav = () => {
     const handleGoogleSignIn = () => {
         loginWithGoogle(googleProvider)
         .then((result) => {
-            const user =result.user;
-            console.log(user)
+            navigate('/')
         })
         .catch((error) => {
             console.error(error)
@@ -27,8 +29,7 @@ const RightNav = () => {
     const handleGithubSignIn = () => {
         loginWithGitHub(gitHubProvider)
         .then((result) => {
-            const user =result.user;
-            console.log(user)
+            navigate('/')
         })
         .catch((error) => {
             console.error(error)

@@ -1,9 +1,19 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import CourseCartSummary from '../shared/CourseCartSummary/CourseCartSummary';
 
 const Courses = () => {
+
+const courses = useLoaderData();
+
     return (
         <div>
-            <h2>This is Courses</h2>
+            {
+                courses.map(course => <CourseCartSummary
+                key={course.id}
+                course={course}
+                ></CourseCartSummary>)
+            }
         </div>
     );
 };
