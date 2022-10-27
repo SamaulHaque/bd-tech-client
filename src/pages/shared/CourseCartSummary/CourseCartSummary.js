@@ -7,13 +7,14 @@ const CourseCartSummary = ({ course }) => {
     console.log(course)
     return (
         <Card className='mb-4'>
+            <Card.Header as="h5">Download Course Details as PDF.</Card.Header>
             <Card.Img variant="top" src={image_url} />
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
                 <Card.Text>
                     {
                         details.length > 250 ?
-                            <>{details?.slice(0, 250) + '...'} <Link to={`/course/${_id}`}>Read More</Link></>
+                            <>{details?.slice(0, 250) + '...'} <Link to={`/course/${_id}`}>Read More Course Details</Link></>
                             : <>{details}</>
                     }
                 </Card.Text>

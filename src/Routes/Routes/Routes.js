@@ -7,16 +7,19 @@ import Home from "../../pages/Home/Home";
 import Login from "../../pages/login/Login/Login";
 import Register from "../../pages/login/Register/Register";
 import Blog from "../../pages/shared/Blog/Blog";
+import CourseCartSummary from "../../pages/shared/CourseCartSummary/CourseCartSummary";
 import FAQ from "../../pages/shared/FAQ/FAQ";
 
 export const routes = createBrowserRouter([
     {
-        path:'/courses',
+        path:'/',
         element: <Main></Main>,
         children:[
             {
                 path:'/',
-                element: <Home></Home>
+                element: <Courses></Courses>,
+                loader: () => fetch('http://localhost:5000/courses')
+            
             },
             {
                 path: '/category/:id',
