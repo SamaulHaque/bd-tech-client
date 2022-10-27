@@ -19,7 +19,7 @@ const Course = () => {
                         details
                     }
                 </Card.Text>
-               <Link to='/courses'> <Button variant="primary">Get Premium Access</Button></Link>
+               <Link to='/checkout'> <Button variant="primary">Get Premium Access</Button></Link>
             </Card.Body>
         </Card>
     );
