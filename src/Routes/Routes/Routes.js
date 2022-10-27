@@ -11,7 +11,7 @@ import FAQ from "../../pages/shared/FAQ/FAQ";
 
 export const routes = createBrowserRouter([
     {
-        path:'/',
+        path:'/courses',
         element: <Main></Main>,
         children:[
             {

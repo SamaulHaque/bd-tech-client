@@ -19,7 +19,7 @@ const RightNav = () => {
     const handleGoogleSignIn = () => {
         loginWithGoogle(googleProvider)
         .then((result) => {
-            navigate('/')
+            navigate('/courses')
         })
         .catch((error) => {
             console.error(error)
@@ -29,7 +29,7 @@ const RightNav = () => {
     const handleGithubSignIn = () => {
         loginWithGitHub(gitHubProvider)
         .then((result) => {
-            navigate('/')
+            navigate('/courses')
         })
         .catch((error) => {
             console.error(error)
