@@ -11,14 +11,13 @@ import './Header.css'
 
 
 const Header = () => {
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logOut} = useContext(AuthContext);
 
     const handleLogOut = () => {
         logOut()
         .then(() => {})
         .cath(error => console.error(error))
     }
-
     return (
         <Navbar className='mb-4 nav-routes' collapseOnSelect expand="lg" bg="light" variant="light">
             <Container>

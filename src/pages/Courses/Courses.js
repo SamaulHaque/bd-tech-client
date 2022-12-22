@@ -1,11 +1,8 @@
-import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import CourseCartSummary from '../shared/CourseCartSummary/CourseCartSummary';
 
 const Courses = () => {
-
 const courses = useLoaderData();
-
     return (
         <div>
             {
